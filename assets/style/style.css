@@ -4,4 +4,99 @@
     --tertiary-color: #7eca9c;
     --quaternary-color: #ccffbd;
 }
-/* comment */
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+html, body {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    font-family: "Comfortaa", sans-serif;
+    margin: 0;
+    height: 100%
+}
+
+footer {
+    width: 100%;
+    padding: 40px 35px;
+    /* update padding */
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+    text-align: center;
+    color: var(--quaternary-color);
+    font-size: 19px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.jumbotron {
+    text-align: center;
+    font-size: 65px;
+    color: var(--tertiary-color);
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.welcome-message {
+    text-align: center;
+    color: var(--tertiary-color);
+}
+
+.rules-directions {
+    text-align: center;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#start-section {
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    /* padding-top: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 50px; */
+    margin: auto;
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    header {
+        display: block;
+        float: none;
+        height: 50px;
+        line-height: 59px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    header {
+        display: block;
+        float: none;
+        height: 50px;
+        line-height: 59px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    header {
+        display: block;
+        float: none;
+        height: 20px;
+        line-height: 59px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
