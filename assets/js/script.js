@@ -41,13 +41,13 @@ function displayCocktail(cocktail) {
         }
         var ingredient = document.createElement("ons-list-item");
         // using a template literal to grab the ingredients as we iterate through them
-        ingredient.innerHTML = cocktail.drinks[0][`strMeasure${i}`] + ": " + cocktail.drinks[0][`strIngredient${i}`];
+        ingredient.innerHTML = (cocktail.drinks[0][`strMeasure${i}`] + ": " + cocktail.drinks[0][`strIngredient${i}`] + "<br />");
         $("#ingredients").remove();
         $("#ingredients-container").append(ingredient);
     }
 
     var instructions = document.createElement("p");
-    instructions.innerHTML = cocktail.drinks[0].strInstructions;
+    instructions.innerHTML = (cocktail.drinks[0].strInstructions + "<br />");
     $("#removeInstructions").remove();
     $("#instructionsPTag").append(instructions);
 }
