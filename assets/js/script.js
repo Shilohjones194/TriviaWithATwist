@@ -1,21 +1,31 @@
+var modalBtn = document.querySelector('modal-btn');
+var modalBg = document.querySelector('.modal-bg');
+var modalClose =document.querySelector('.modal-close');
 
+modalBtn.addEventListener('click', function () {
+    modalBg.classList.add('bg-active');
+});
+modalClose.addEventListener('click',function() {
+    modalBg.classList.remove('bg-active');
+})
 
 var questionEl = document.querySelector('.question')
+//Shuffle//
+// function shuffle(array) {
+//     var currentIndex = array.length;
+//     var temporaryValue;
+//     var randomIndex;
 
-function shuffle(array) {
-    var currentIndex = array.length;
-    var temporaryValue;
-    var randomIndex;
+//     while (0 !== currentIndex) {
+//         randomIndex = Math.floor(Math.random() * currentIndex);
+//         currentIndex -= 1;
+//         temporaryValue = array[randomIndex];
+//         array[currentIndex] = [randomIndex];
+//         array[randomIndex] = temporaryValue;
 
-    while (0 !== currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[randomIndex];
-        array[currentIndex] = [randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-    return array;
-}
+//     return array;
+//     }
+// }
 
 fetch("https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=multiple")
 
@@ -30,7 +40,7 @@ fetch("https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=mu
             var correctAnswer = questionObjs[i].correct_answer;
 
             choices.push(correctAnswer);
-            choices = shuffle(choices);
+            //choices = shuffle(choices);
 
             questionEl.innerHTML = question;
 
