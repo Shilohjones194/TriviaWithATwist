@@ -67,6 +67,12 @@ footer {
     padding: 10px;
 }
 
+@media screen and (max-width: 980px) {
+    footer {
+        position: relative;
+        }
+}
+
 
 @media screen and (max-width: 768px) {
     header {
@@ -76,6 +82,10 @@ footer {
         line-height: 59px;
         text-align: center;
         margin: 0 auto;
+    }
+
+    footer {
+    position: relative;
     }
 }
 
