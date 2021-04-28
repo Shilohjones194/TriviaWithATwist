@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css" />
-    <script src="https://kit.fontawesome.com/a8c6a3430b.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/style/style.css" />
-    <title>Trivia With A Twist</title>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css"
+        />
+        <script
+            src="https://kit.fontawesome.com/a8c6a3430b.js"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assets/style/style.css" />
+        <title>Trivia With A Twist</title>
+    </head>
 
-<body>
-        <!--APIs: https://opentdb.com/api_config.php--> 
+    <body>
+        <!--APIs: https://opentdb.com/api_config.php-->
 
-
-    <header class="jumbotron">
-        <h1 class="app-title">Trivia with a Twist!<i class="fa fa-cocktail fa-fw" aria-hidden="true"></i></h1>
-    </header>
-
+        <header class="jumbotron">
+            <h1 class="app-title">
+                Trivia with a Twist!<i
+                    class="fa fa-cocktail fa-fw"
+                    aria-hidden="true"
+                ></i>
+            </h1>
+        </header>
 
         <main>
             <div class="columns">
@@ -44,48 +55,90 @@
                                 </figure>
                                 <hr />
                             </div>
-                            
 
                             <div id="search">
                                 <p>Click the button for a random drink!</p>
-                                <button id="randoBtn" class="button is-dark button is-medium">Search!</button>
+                                <button
+                                    id="randoBtn"
+                                    class="button is-dark button is-medium"
+                                >
+                                    Search!
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Drink Modelo -->
+                <div class="modal" id="drinkModal">
+                    
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                    <p class="title is-4" id="titleDM"></p>
+                    <figure class="image" id="imgDM"></figure>
+                    <hr />
+
+                    <div id="ingredients-container">
+                        <p class="title is-3" id="ingredientsTitle">
+                            Ingredients:
+                        </p>
+                        <p id="ingredients"></p>
+                    </div>
+
+                    <div id="instructions-container">
+                        <p class="title is-3" id="instructionsTitle">
+                            Instructions:
+                        </p>
+                        <p id="instructions"></p>
+                    </div>
+                </div>
+            </div>
             <!-- End 1st column-->
+            
             <!-- Creating Main Column with Welcome MSG/Rules/Start Button-->
             <div class="column is-three-fifths">
                 <div class="box content welcome-message">
-                    <h1> Welcome to Trivia With A Twist!</h1>
+                    <h1>Welcome to Trivia With A Twist!</h1>
                 </div>
                 <div class="box content">
                     <h2 class="welcome-message">Rules & Directions</h2>
-                    <p class="rules-directions"> Everyone needs a drink in hand before we start the game!
-                        Click on the Randomize Drink selection to the left to get it going.
-                        For every question answered wrong, you drink. High score wins. Have fun and click the Start Trivia button to begin.
+                    <p class="rules-directions">
+                        Everyone needs a drink in hand before we start the game!
+                        Click on the Randomize Drink selection to the left to
+                        get it going. For every question answered wrong, you
+                        drink. High score wins. Have fun and click the Start
+                        Trivia button to begin.
                     </p>
                 </div>
                 <div class="box" id="start-section">
-                    <button type="button" class="button is-dark button is-medium" id="startTrivia">Start Trivia!</button>
-
+                    <button
+                        type="button"
+                        class="button is-dark button is-medium"
+                        id="startTrivia"
+                    >
+                        Start Trivia!
+                    </button>
                 </div>
             </div>
 
             <!-- Start of 3rd column-->
             <div class="column is-one-fifth" id="placeholder-container">
-                <div class="box"> 
-                    <img src="./assets/images/cocktail.png" alt="Two grapefruit cocktails with rosemary garnishes" />
+                <div class="box">
+                    <img
+                        src="./assets/images/cocktail.png"
+                        alt="Two grapefruit cocktails with rosemary garnishes"
+                    />
                 </div>
             </div>
+        </main>
 
-    </main>
-
-    <!-- footer -->
-    <footer>Made with love by Lily, Luke, and Pablo <i class="fas fa-glass-cheers"></i></footer>
-    <!-- footer end -->
-</body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="./assets/js/script.js"></script>
-
+        <!-- footer -->
+        <footer>
+            Made with love by Lily, Luke, and Pablo
+            <i class="fas fa-glass-cheers"></i>
+        </footer>
+        <!-- footer end -->
+    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </html>
