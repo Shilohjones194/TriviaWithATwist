@@ -65,27 +65,25 @@
                             <div class="container">
                                 <div class="question">Question 1</div>
                                 <ul>
-                                    <li><button class="answer-button" id="a">a</button></li>
-                                    <li><button class="answer-button" id="b">b</button></li>
-                                    <li><button class="answer-button" id="c">c</button></li>
-                                    <li><button class="answer-button" id="d">d</button></li>
-                                    <span class="modal-close">X</span>
+                                    <li><button class="answer-button" data-value="" id="a">a</button></li>
+                                    <li><button class="answer-button" data-value=""id="b">b</button></li>
+                                    <li><button class="answer-button" data-value=""id="c">c</button></li>
+                                    <li><button class="answer-button" data-value=""id="d">d</button></li>
                                 </ul>
+                                <!--Stats-->
+                                <ul class="stats">
+                                    <li class="statsContainer">
+                                        <div id="score">Score: 0</div>
+                                    </li>
+                                    <li class="statsContainer">
+                                        <div id="question-number">Question: 1/5</div>
+                                    </li>
+                                </ul>
+                                <span class="modal-close">X</span>
                             </div>
                         </div>
                     </div>
-                    <!--modal -------------->
-                    <!--Build the "Stats" container that hold the score box, Questions number/5.-->
-                    <ul class="stats">
-                        <li class="statsContainer">
-                            <div id="score">Score: 0</div>
-                        </li>
-                        <li class="statsContainer">
-                            <div id="question-number">Question: 1/5</div>
-                        </li>
-                    </ul>
-                    <!--Build EX question-->
-                    <!---->
+                    
 
                 </div>
             </div>
@@ -104,5 +102,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="./assets/js/script.js"></script>
+<script src="./assets/js/trivia.js"></script>
 
 </html>
