@@ -1,15 +1,17 @@
-var modalBtn = document.querySelector('modal-btn');
-var modalBg = document.querySelector('.modal-bg');
-var modalClose =document.querySelector('.modal-close');
+// var modalBtn = document.querySelector('modal-btn');
+// var modalBg = document.querySelector('.modal-bg');
+// var modalClose =document.querySelector('.modal-close');
 
-modalBtn.addEventListener('click', function () {
-    modalBg.classList.add('bg-active');
-});
-modalClose.addEventListener('click',function() {
-    modalBg.classList.remove('bg-active');
-})
+// modalBtn.addEventListener('click', function () {
+//     modalBg.classList.add('bg-active');
+// });
+// modalClose.addEventListener('click',function() {
+//     modalBg.classList.remove('bg-active');
+// })
 
-var questionEl = document.querySelector('.question')
+// var questionEl = document.querySelector('.question')
+
+
 //Shuffle//
 // function shuffle(array) {
 //     var currentIndex = array.length;
@@ -51,16 +53,30 @@ fetch("https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=mu
 
         }
     })
+                // // need to still make following elements
+//  var scoreEl= document.querySelector('#score');
+//  var questionNumberEl =document.querySelector('#questionNumber');
+
+                // // need to make save score functional:
+//  function saveHS() {
+//      var name = nameEl.value.trim();
+
+            //// Saving HighScores to local drive
+//      if(name !== "") {
+//          //Save HighScores
+//          var highScores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+//          var newScore= {
+//              score: amount,
+//              name: name
+//          };
+//          highScores.push(newScore);
+//          window.localStorage.setItem("highscores", JSON.stringify(highScores));
+//          
+//      }
+//  }
 
 
 
-
-
-//function (data){
-//document.querySelector("#category").innerHTML = 
-//document.querySelector("#difficulty").innerHTML =
-//document.querySelector("")
-//}
 
 
 //for loop through both incorrect and correct answers within for loop.
