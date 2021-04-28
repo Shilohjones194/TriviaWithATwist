@@ -1,5 +1,31 @@
 var randoBtnEl = $("#randoBtn");
 var randoURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+var currentDrinkIndex = 0;
+
+// Modal Script
+var modal = document.getElementById("drinkModal");
+
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Modal Script
+
+
 
 function drinkFetcher() {
     fetch(
@@ -27,16 +53,17 @@ function displayCocktail(cocktail) {
     // updating `drinkTitle` to the name of the drink returned from the API then updating the DOM with it
     drinkTitle = cocktail.drinks[0].strDrink;
     $("#titleP").replaceWith("<h4>" + drinkTitle + "</h4>");
+    $("#titleDM").replaceWith("<h4>" + drinkTitle + "</h4>");
 
     // Updating the image using the API data then putting it on the page
     var drinkImg = document.createElement("img");
     drinkImg.src = cocktail.drinks[0].strDrinkThumb;
     $("#drinkImg").replaceWith(drinkImg);
+    $("#imgDM").replaceWith(drinkImg);
 
     // There's some mathmatical offsetting being done in this for loop.  The indredients array starts at 1, not the index of 0.  So `i` starts at  1.  Also, we don't know how many ingredients each will have, but we know 15 is the max.  That means we loop through less than 16 times.
     for (var i = 1; i < 16; i++) {
         if (cocktail.drinks[0][`strIngredient${i}`] == null) {
-            console.log("oops");
             break;
         }
         var ingredient = document.createElement("ons-list-item");
@@ -49,13 +76,14 @@ function displayCocktail(cocktail) {
     var instructions = document.createElement("p");
     instructions.innerHTML = (cocktail.drinks[0].strInstructions + "<br />");
     $("#removeInstructions").remove();
-    $("#instructionsPTag").append(instructions);
+    $("#instructions").append(instructions);
 }
 
 
 $(randoBtnEl).click(function (event) {
     event.preventDefault();
     drinkFetcher();
+    modal.style.display = "block";
 });
 
 // function gifGrab() {
