@@ -1,6 +1,8 @@
 var randoBtnEl = $("#randoBtn");
 var randoURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-var currentDrinkIndex = 0;
+var drinkName = "";
+var nameBtnEl = $("#nameBtn");
+// var randoURL = "www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkName;
 
 // Modal Script
 var modal = document.getElementById("drinkModal");
@@ -17,13 +19,6 @@ window.onclick = function (event) {
     }
 }
 // Modal Script end
-
-function clearModalContent() {
-    // Target content to clear
-
-}
-
-
 
 function drinkFetcher() {
     fetch(
@@ -85,14 +80,11 @@ function displayCocktail(cocktail) {
     instructions.innerHTML = (cocktail.drinks[0].strInstructions + "<br />");
     $("#instructions-list").append(instructions);
 
-    currentDrinkIndex++;
-    console.log(currentDrinkIndex);
 }
 
 
 $(randoBtnEl).click(function (event) {
     event.preventDefault();
-    clearModalContent();
     drinkFetcher();
     modal.style.display = "block";
 });
