@@ -97,9 +97,27 @@ $(randoBtnEl).click(function (event) {
     modal.style.display = "block";
 });
 
-// function gifGrab() {
-//     fetch(
-//         'https://api.giphy.com/v1/gifs/search?q=cocktails&api_key=W1Byjf3yzHSrqwWY2xZyUV9zb93154ls'
-//     )
-// }
+function gifGrab() {
+    fetch(
+        'https://api.giphy.com/v1/gifs/search?q=cocktail&api_key=W1Byjf3yzHSrqwWY2xZyUV9zb93154ls'
+    )
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            console.log(response.data[0]);
+            // Create a variable that will select the <div> where the GIF will be displayed
+            var cardImageContainer = $("#card-image");
 
+            // Empty out the <div> before we append a GIF to it
+            $("#card-image").innerHTML = '';
+
+            var gifImg = document.createElement("img");
+            gifImg.src = (response.data[0].images.fixed_height.url);
+            $("#card-image").append(gifImg);
+        });
+}
+
+$(document).ready(function () {
+    gifGrab();
+});
