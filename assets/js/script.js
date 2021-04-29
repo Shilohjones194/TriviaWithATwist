@@ -1,6 +1,9 @@
 var randoBtnEl = $("#randoBtn");
 var randoURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-var currentDrinkIndex = 0;
+var drinkName = "";
+var nameBtnEl = $("#nameBtn");
+var currentDrink = 0;
+// var randoURL = "www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkName;
 
 // Modal Script
 var modal = document.getElementById("drinkModal");
@@ -18,12 +21,15 @@ window.onclick = function (event) {
 }
 // Modal Script end
 
-function clearModalContent() {
-    // Target content to clear
-
+function saveDrink(array) {
+    localStorage.setItem("drinks", drinkStorageArray);
 }
 
-
+function getDrink() {
+    var savedDrinks = localStorage.getItem(drinkStorageArray);
+    var roundTwo = JSON.parse(savedDrinks);
+    console.log(roundTwo);
+}
 
 function drinkFetcher() {
     fetch(
@@ -76,25 +82,40 @@ function displayCocktail(cocktail) {
             break;
         }
         var ingredient = document.createElement("li");
+        var currentIngredient = (cocktail.drinks[0][`strMeasure${i}`] + ": " + cocktail.drinks[0][`strIngredient${i}`])
+        var ingredientStorage = [];
         // using a template literal to grab the ingredients as we iterate through them
         ingredient.innerHTML = (cocktail.drinks[0][`strMeasure${i}`] + ": " + cocktail.drinks[0][`strIngredient${i}`] + "<br />");
         $("#ingredients-list").append(ingredient);
+        ingredientStorage.push(currentIngredient);
     }
 
     var instructions = document.createElement("p");
+    var instructionsToSave = [];
     instructions.innerHTML = (cocktail.drinks[0].strInstructions + "<br />");
     $("#instructions-list").append(instructions);
+    instructionsToSave.concat(instructions);
 
-    currentDrinkIndex++;
-    console.log(currentDrinkIndex);
+    drinkStorageArray = [drinkTitle, drinkImg, ingredientStorage, instructions];
+    return drinkStorageArray;
 }
 
 
 $(randoBtnEl).click(function (event) {
     event.preventDefault();
-    clearModalContent();
     drinkFetcher();
     modal.style.display = "block";
+});
+
+$("#saveDrinkBtn").click(function (event) {
+    event.preventDefault();
+    saveDrink();
+    console.log(drinkStorageArray);
+});
+
+$("#getDrinkBtn").click(function (event) {
+    event.preventDefault();
+    getDrink();
 });
 
 function gifGrab() {
@@ -105,7 +126,7 @@ function gifGrab() {
             return response.json();
         })
         .then(function (response) {
-            console.log(response.data[0]);
+
             // Create a variable that will select the <div> where the GIF will be displayed
             var cardImageContainer = $("#card-image");
 
