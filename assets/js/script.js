@@ -49,7 +49,7 @@ function drinkFetcher() {
 
 function displayCocktail(cocktail) {
     $("#drink-title-container").empty();
-    $("#image-container").empty();
+    $("#card-image").empty();
     $("#modal-title-container").empty();
     $("#modal-image-container").empty();
 
@@ -61,7 +61,7 @@ function displayCocktail(cocktail) {
     // Updating the image using the API data then putting it on the page
     var drinkImg = document.createElement("img");
     drinkImg.src = cocktail.drinks[0].strDrinkThumb;
-    $("#image-container").append(drinkImg);
+    $("#card-image").append(drinkImg);
 
     var drinkImg = document.createElement("img");
     drinkImg.src = cocktail.drinks[0].strDrinkThumb;
