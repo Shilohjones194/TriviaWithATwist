@@ -4,7 +4,7 @@
     --tertiary-color: #7eca9c;
     --quaternary-color: #ccffbd;
 }
-/* comment */
+/* Game Trivia Modal */
 .modal-bg {
     position: fixed;
     width: 100%;
@@ -26,15 +26,16 @@
 
 .modal{
     position: relative;
-    background-color: white;
-    width: 30%;
+    background-color:var(--secondary-color);
+    width: 40%;
     height: 30%;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly;
     align-items: center;
     flex-direction: column;
 }
 .modal-close {
+    visibility: initial;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -44,4 +45,25 @@
     text-decoration: none;
     cursor: pointer;
 }
-/* add drinking cursor?
+
+.answer-button {
+    background-color:var(--quaternary-color);
+    border-spacing: 10px;
+}
+
+.question {
+    color: var(--tertiary-color);
+    flex-wrap: wrap;
+    font-weight: bolder;
+}
+.answer-button{
+    color:var(--primary-color)
+}
+.stats {
+    color: var(--tertiary-color);
+    font-weight: normal;
+}
+/* Game Trivia Modal */
+
+
+
