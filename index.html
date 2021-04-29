@@ -34,19 +34,19 @@
 
         <main>
             <div class="columns">
-                <div class="column is-one-fifth" id="drink-container">
+                <div class="column is-one-fifth">
                     <div class="card">
                         <div class="card-content">
                             <div class="media">
-                                <div class="media-content" id="drinkTitle">
-                                    <p class="title is-4" id="titleP">
+                                <div class="media-content" id="drink-title-container">
+                                    <p class="title is-4" id="drinkTitleMain">
                                         Duff Beer
                                     </p>
                                 </div>
                             </div>
 
                             <div class="card-image">
-                                <figure class="image" id="drinkImg">
+                                <figure class="image" id="image-container">
                                     <img
                                         src="./assets/images/duff.jfif"
                                         alt="Placeholder image"
@@ -74,22 +74,30 @@
                     
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                    <p class="title is-4" id="titleDM"></p>
+                    <div id="modal-title-container">
+                        <p class="title is-4" id="titleDM"></p>
+                    </div>
+                    <div id="modal-image-container">
                     <figure class="image" id="imgDM"></figure>
+                    </div>
                     <hr />
 
                     <div id="ingredients-container">
                         <p class="title is-3" id="ingredientsTitle">
                             Ingredients:
                         </p>
-                        <p id="ingredients"></p>
+                        <ul id="ingredients-list">
+                            <li id="ingredients"></li>
+                        </ul>
                     </div>
 
                     <div id="instructions-container">
                         <p class="title is-3" id="instructionsTitle">
                             Instructions:
                         </p>
-                        <p id="instructions"></p>
+                        <div id="instructions-list">
+                            <p id="instructions"></p>
+                        </div>
                     </div>
                 </div>
             </div>
