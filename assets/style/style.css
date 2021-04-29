@@ -39,5 +39,6 @@
     top: 10px;
     right: 10px;
     font-weight: bold;
+    z-index: 20;
 }
 /* add drinking cursor?
