@@ -22,7 +22,6 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-
 // Modal Script
 
 
@@ -32,6 +31,7 @@ function drinkFetcher() {
         randoURL
     )
         .then(function (response) {
+            // Error handler in case response takes too long
             if (response.status !== 200) {
                 console.log("There was a problem successfully loading your drink. Code: " +
                     response.status);
@@ -49,7 +49,6 @@ function drinkFetcher() {
 }
 
 function displayCocktail(cocktail) {
-    console.log(cocktail.drinks[0].strDrink);
     // updating `drinkTitle` to the name of the drink returned from the API then updating the DOM with it
     drinkTitle = cocktail.drinks[0].strDrink;
     $("#titleP").replaceWith("<h4>" + drinkTitle + "</h4>");
@@ -59,6 +58,9 @@ function displayCocktail(cocktail) {
     var drinkImg = document.createElement("img");
     drinkImg.src = cocktail.drinks[0].strDrinkThumb;
     $("#drinkImg").replaceWith(drinkImg);
+
+    var drinkImg = document.createElement("img");
+    drinkImg.src = cocktail.drinks[0].strDrinkThumb;
     $("#imgDM").replaceWith(drinkImg);
 
     // There's some mathmatical offsetting being done in this for loop.  The indredients array starts at 1, not the index of 0.  So `i` starts at  1.  Also, we don't know how many ingredients each will have, but we know 15 is the max.  That means we loop through less than 16 times.
@@ -77,6 +79,9 @@ function displayCocktail(cocktail) {
     instructions.innerHTML = (cocktail.drinks[0].strInstructions + "<br />");
     $("#removeInstructions").remove();
     $("#instructions").append(instructions);
+
+    currentDrinkIndex++;
+    console.log(currentDrinkIndex);
 }
 
 
