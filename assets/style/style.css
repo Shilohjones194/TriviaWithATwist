@@ -61,6 +61,10 @@ footer {
     color: var(--secondary-color);
 }
 
+.cocktail-img {
+    padding-right: 50px;
+}
+
 #start-section {
     text-align: center;
     width: 300px;
@@ -113,12 +117,15 @@ footer {
     cursor: pointer;
 }
 
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
     footer {
         position: relative;
     }
 }
 
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
     header {
         display: block;
@@ -132,8 +139,14 @@ footer {
     footer {
         position: relative;
     }
+
+    .cocktail-img {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
 }
 
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
     header {
         display: block;
@@ -142,6 +155,11 @@ footer {
         line-height: 59px;
         text-align: center;
         margin: 0 auto;
+    }
+
+    .cocktail-img {
+        padding-left: 150px;
+        padding-right: 150px;
     }
 }
 
@@ -154,9 +172,15 @@ footer {
         text-align: center;
         margin: 0 auto;
     }
+
+    .cocktail-img {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 /* Start https://www.cursors-4u.com */
 * {
     cursor: url(https://cur.cursors-4u.net/food/foo-5/foo497.cur), auto !important;
-} /* End https://www.cursors-4u.com */
+} 
+/* End https://www.cursors-4u.com */
