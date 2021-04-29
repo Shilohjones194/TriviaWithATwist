@@ -4,25 +4,24 @@ var currentDrinkIndex = 0;
 
 // Modal Script
 var modal = document.getElementById("drinkModal");
-
-
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
 }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-// Modal Script
+// Modal Script end
+
+function clearModalContent() {
+    // Target content to clear
+
+}
 
 
 
@@ -49,36 +48,42 @@ function drinkFetcher() {
 }
 
 function displayCocktail(cocktail) {
+    $("#drink-title-container").empty();
+    $("#image-container").empty();
+    $("#modal-title-container").empty();
+    $("#modal-image-container").empty();
+
     // updating `drinkTitle` to the name of the drink returned from the API then updating the DOM with it
     drinkTitle = cocktail.drinks[0].strDrink;
-    $("#titleP").replaceWith("<h4>" + drinkTitle + "</h4>");
-    $("#titleDM").replaceWith("<h4>" + drinkTitle + "</h4>");
+    $("#drink-title-container").append("<h5>" + drinkTitle + "</h5>");
+    $("#modal-title-container").append("<h5>" + drinkTitle + "</h5>");
 
     // Updating the image using the API data then putting it on the page
     var drinkImg = document.createElement("img");
     drinkImg.src = cocktail.drinks[0].strDrinkThumb;
-    $("#drinkImg").replaceWith(drinkImg);
+    $("#image-container").append(drinkImg);
 
     var drinkImg = document.createElement("img");
     drinkImg.src = cocktail.drinks[0].strDrinkThumb;
-    $("#imgDM").replaceWith(drinkImg);
+    $("#modal-image-container").append(drinkImg);
+
+    $("#ingredients-list").empty();
+    $("#instructions-list").empty();
 
     // There's some mathmatical offsetting being done in this for loop.  The indredients array starts at 1, not the index of 0.  So `i` starts at  1.  Also, we don't know how many ingredients each will have, but we know 15 is the max.  That means we loop through less than 16 times.
     for (var i = 1; i < 16; i++) {
         if (cocktail.drinks[0][`strIngredient${i}`] == null) {
             break;
         }
-        var ingredient = document.createElement("ons-list-item");
+        var ingredient = document.createElement("li");
         // using a template literal to grab the ingredients as we iterate through them
         ingredient.innerHTML = (cocktail.drinks[0][`strMeasure${i}`] + ": " + cocktail.drinks[0][`strIngredient${i}`] + "<br />");
-        $("#ingredients").remove();
-        $("#ingredients-container").append(ingredient);
+        $("#ingredients-list").append(ingredient);
     }
 
     var instructions = document.createElement("p");
     instructions.innerHTML = (cocktail.drinks[0].strInstructions + "<br />");
-    $("#removeInstructions").remove();
-    $("#instructions").append(instructions);
+    $("#instructions-list").append(instructions);
 
     currentDrinkIndex++;
     console.log(currentDrinkIndex);
@@ -87,6 +92,7 @@ function displayCocktail(cocktail) {
 
 $(randoBtnEl).click(function (event) {
     event.preventDefault();
+    clearModalContent();
     drinkFetcher();
     modal.style.display = "block";
 });
