@@ -5,6 +5,12 @@
     --quaternary-color: #ccffbd;
 }
 
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
 html,
 body {
     color: var(--primary-color);
@@ -20,19 +26,13 @@ body {
     justify-content: center;
 }
 
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto; 
-    width: auto; 
-    max-width: 400px; 
-    max-height: 400px;
-}
-
 footer {
     width: 100%;
     padding: 40px 35px;
+    /* update padding */
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; */
     text-align: center;
     color: var(--quaternary-color);
     font-size: 19px;
@@ -61,30 +61,9 @@ footer {
     color: var(--secondary-color);
 }
 
-
-.cocktail-card {
-    padding-left: 50px;
-}
-
-.media-content h5 {
-    font-weight: bold;
-    text-align: center;
-    font-size: 23px;
-}
-
-.drink-random {
-    font-weight: bold;
-    text-align: center;
-}
-
-#drinkTitleMain {
-    text-align: center;
-}
-
 .cocktail-img {
     padding-right: 50px;
 }
-
 
 #start-section {
     text-align: center;
@@ -111,30 +90,16 @@ footer {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
-    font-weight: bold;
-    background-color: var(--quaternary-color);
+    background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-}
-
-#modal-title-container {
-    font-size: 35px;
-    text-align: center;
-}
-
-#ingredientsTitle {
-    font-size: 25px;
-}
-
-#instructionsTitle {
-    font-size: 25px;
 }
 
 /* The Close Button */
@@ -175,22 +140,13 @@ footer {
         position: relative;
     }
 
-    .cocktail-card {
-        padding-left: 150px;
-        padding-right: 150px;
-    }
-  
     .cocktail-img {
         padding-left: 150px;
         padding-right: 150px;
     }
 }
 
-
-
-
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
-
 @media screen and (max-width: 575px) {
     header {
         display: block;
@@ -201,12 +157,6 @@ footer {
         margin: 0 auto;
     }
 
-
-    .cocktail-card {
-        padding-left: 150px;
-        padding-right: 150px;
-    }
-  
     .cocktail-img {
         padding-left: 150px;
         padding-right: 150px;
@@ -223,19 +173,12 @@ footer {
         margin: 0 auto;
     }
 
-
-    .cocktail-card {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
     .cocktail-img {
         padding-left: 20px;
         padding-right: 20px;
     }
 }
 
-/* cocktail cursor */
 /* Start https://www.cursors-4u.com */
 * {
     cursor: url(https://cur.cursors-4u.net/food/foo-5/foo497.cur), auto !important;
