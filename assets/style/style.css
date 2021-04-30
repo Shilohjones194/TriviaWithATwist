@@ -61,6 +61,7 @@ footer {
     color: var(--secondary-color);
 }
 
+
 .cocktail-card {
     padding-left: 50px;
 }
@@ -79,6 +80,12 @@ footer {
 #drinkTitleMain {
     text-align: center;
 }
+
+.cocktail-img {
+    padding-right: 50px;
+}
+
+
 #start-section {
     text-align: center;
     width: 300px;
@@ -145,12 +152,15 @@ footer {
     cursor: pointer;
 }
 
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
     footer {
         position: relative;
     }
 }
 
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
 @media screen and (max-width: 768px) {
     header {
         display: block;
@@ -169,8 +179,17 @@ footer {
         padding-left: 150px;
         padding-right: 150px;
     }
+  
+    .cocktail-img {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
 }
 
+
+
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 
 @media screen and (max-width: 575px) {
     header {
@@ -182,7 +201,13 @@ footer {
         margin: 0 auto;
     }
 
+
     .cocktail-card {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+  
+    .cocktail-img {
         padding-left: 150px;
         padding-right: 150px;
     }
@@ -198,7 +223,13 @@ footer {
         margin: 0 auto;
     }
 
+
     .cocktail-card {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .cocktail-img {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -208,4 +239,5 @@ footer {
 /* Start https://www.cursors-4u.com */
 * {
     cursor: url(https://cur.cursors-4u.net/food/foo-5/foo497.cur), auto !important;
-} /* End https://www.cursors-4u.com */
+} 
+/* End https://www.cursors-4u.com */
