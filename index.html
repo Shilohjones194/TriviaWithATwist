@@ -114,16 +114,46 @@
                     <h1>Welcome to Trivia With A Twist!</h1>
                 </div>
                 <div class="box content">
+
                     <h2 class="welcome-message">Rules & Directions</h2>
                     <p class="rules-directions">
                         Everyone needs a drink in hand before we start the game!
                         Click on the Randomize Drink selection to the left to
                         get it going. For every question answered wrong, you
                         drink. High score wins. Have fun and click the Start
+
                         Trivia button to begin.
                     </p>
                 </div>
                 <div class="box" id="start-section">
+
+                    <button class="modal-btn" type="button" id="btnStartTrivia">Start Trivia</button>
+                    <div class="modal-bg">
+                        <div class="modal">
+                            <div class="container">
+                                <span class="modal-close">X</span>
+                                <br>
+                                <div class="question">Question 1</div>
+                                <br>
+                                <ul>
+                                    <li><button class="answer-button" data-value="" id="a">a</button></li>
+                                    <li><button class="answer-button" data-value=""id="b">b</button></li>
+                                    <li><button class="answer-button" data-value=""id="c">c</button></li>
+                                    <li><button class="answer-button" data-value=""id="d">d</button></li>
+                                </ul>
+                                <!--Stats-->
+                                <ul class="stats">
+                                    <li class="statsContainer">
+                                        <div id="score">Score: 0</div>
+                                    </li>
+                                    <li class="statsContainer">
+                                        <div id="question-number"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <button
                         type="button"
                         class="button is-dark button is-medium"
@@ -131,6 +161,7 @@
                     >
                         Start Trivia!
                     </button>
+
                 </div>
             </div>
 
@@ -143,15 +174,18 @@
                     />
                 </div>
             </div>
-        </main>
+       
 
-        <!-- footer -->
-        <footer>
-            Made with love by Lily, Luke, and Pablo
-            <i class="fas fa-glass-cheers"></i>
-        </footer>
-        <!-- footer end -->
-    </body>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+        </div>
+        <!-- below is going into Model, this is just for testing-->
+
+
+    </main>
+    <footer>Made with love by Lily, Luke, and Pablo</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="./assets/js/script.js"></script>
+<script src="./assets/js/trivia.js"></script>
+
 </html>
+
