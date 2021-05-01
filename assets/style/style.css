@@ -25,7 +25,7 @@
     opacity: 1;
 }
 
-.modal{
+.modalT{
     position: relative;
     background-color:var(--secondary-color);
     width: 40%;
@@ -89,7 +89,7 @@ img {
     width: auto;
 }
 
-#modal-image-container {
+ #modal-image-container {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -97,7 +97,7 @@ img {
     width: auto;
     max-width: 400px;
     max-height: 400px;
-}
+} 
 
 footer {
     width: 100%;

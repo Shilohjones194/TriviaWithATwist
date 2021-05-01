@@ -1,7 +1,7 @@
 let modalBtn = document.querySelector('.modal-btn');
 let modalBg = document.querySelector('.modal-bg');
 let modalClose = document.querySelector('.modal-close');
-let startTrivia = document.querySelector('#btnStartTrivia');
+let startTrivia = document.querySelector('#startTrivia');
 let questionObjs = []
 let currentQuestion = 0;
 let score = 0;
@@ -17,6 +17,7 @@ startTrivia.addEventListener('click', function () {
             console.log(questionObjs);
             resetModal()
             renderQuestion()
+            modalBg.classList.add('bg-active');
         })
 
 })
@@ -55,9 +56,7 @@ function renderQuestion() {
     document.querySelector('#c').setAttribute("data-value", choices[2])
     document.querySelector('#d').setAttribute("data-value", choices[3])
 }
-modalBtn.addEventListener('click', function () {
-    modalBg.classList.add('bg-active');
-});
+
 modalClose.addEventListener('click', function () {
     console.log("the modal fired thank you")
     modalBg.classList.remove('bg-active');
