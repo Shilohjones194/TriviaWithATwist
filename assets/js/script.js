@@ -22,11 +22,11 @@ window.onclick = function (event) {
 // Modal Script end
 
 function saveDrink(array) {
-    localStorage.setItem("drinks", drinkStorageArray);
+    localStorage.setItem("drinks", JSON.stringify(drinkStorageArray));
 }
 
 function getDrink() {
-    var savedDrinks = localStorage.getItem(drinkStorageArray);
+    var savedDrinks = localStorage.getItem("drinks");
     var roundTwo = JSON.parse(savedDrinks);
     console.log(roundTwo);
 }
@@ -76,27 +76,37 @@ function displayCocktail(cocktail) {
     $("#ingredients-list").empty();
     $("#instructions-list").empty();
 
+    var ingredientObject = [];
+
     // There's some mathmatical offsetting being done in this for loop.  The indredients array starts at 1, not the index of 0.  So `i` starts at  1.  Also, we don't know how many ingredients each will have, but we know 15 is the max.  That means we loop through less than 16 times.
     for (var i = 1; i < 16; i++) {
         if (cocktail.drinks[0][`strIngredient${i}`] == null) {
             break;
         }
         var ingredient = document.createElement("li");
-        var currentIngredient = (cocktail.drinks[0][`strMeasure${i}`] + ": " + cocktail.drinks[0][`strIngredient${i}`])
-        var ingredientStorage = [];
         // using a template literal to grab the ingredients as we iterate through them
         ingredient.innerHTML = (cocktail.drinks[0][`strMeasure${i}`] + ": " + cocktail.drinks[0][`strIngredient${i}`] + "<br />");
         $("#ingredients-list").append(ingredient);
-        ingredientStorage.push(currentIngredient);
+
     }
+    for (var j = 1; j < 16; j++) {
+        if ((cocktail.drinks[0][`strIngredient${j}`] == null) && (cocktail.drinks[0][`strMeasure${j}`] == null)) {
+            break;
+        }
+        var measure = cocktail.drinks[0][`strMeasure${j}`]
+        var ingrs = cocktail.drinks[0][`strIngredient${j}`]
+        var combined = measure + ": " + ingrs;
+        ingredientObject.push(combined);
+    }
+
 
     var instructions = document.createElement("p");
     var instructionsToSave = [];
     instructions.innerHTML = (cocktail.drinks[0].strInstructions + "<br />");
     $("#instructions-list").append(instructions);
-    instructionsToSave.concat(instructions);
+    instructionsToSave.push(cocktail.drinks[0].strInstructions);
 
-    drinkStorageArray = [drinkTitle, drinkImg, ingredientStorage, instructions];
+    drinkStorageArray = [drinkTitle, drinkImg.src, ingredientObject, instructionsToSave];
     return drinkStorageArray;
 }
 
@@ -138,6 +148,14 @@ function gifGrab() {
             $("#card-image").append(gifImg);
         });
 }
+
+$("#clearBtn").click(function () {
+    var clear = confirm("Would you like to clear all items?");
+    if (clear) {
+        localStorage.clear();
+        location.reload();
+    }
+})
 
 $(document).ready(function () {
     gifGrab();

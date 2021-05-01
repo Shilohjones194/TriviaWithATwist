@@ -38,7 +38,10 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="media">
-                                <div class="media-content" id="drink-title-container">
+                                <div
+                                    class="media-content"
+                                    id="drink-title-container"
+                                >
                                     <p class="title is-4" id="drinkTitleMain">
                                         Find a drink!
                                     </p>
@@ -46,7 +49,7 @@
                             </div>
 
                             <div id="card-image"></div>
-                            
+
                             <hr />
 
                             <div class="drink-random" id="search">
@@ -58,134 +61,167 @@
                                     Search!
                                 </button>
                             </div>
+
+                            <div id="clear">
+                                <p>Clear local storage!</p>
+                                <button
+                                    id="clearBtn"
+                                    class="button is-dark button is-medium"
+                                >
+                                    <i class="fas fa-eraser"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Drink Modelo -->
                 <div class="modal" id="drinkModal">
-                    
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                    <div id="modal-title-container">
-                        <p class="title is-4" id="titleDM"></p>
-                    </div>
-                    <div id="modal-image-container">
-                    <figure class="image" id="imgDM"></figure>
-                    </div>
-                    <hr />
-
-                    <div id="ingredients-container">
-                        <p class="title is-3" id="ingredientsTitle">
-                            Ingredients:
-                        </p>
-                        <ul id="ingredients-list">
-                            <li id="ingredients"></li>
-                        </ul>
-                    </div>
-
-                    <div id="instructions-container">
-                        <p class="title is-3" id="instructionsTitle">
-                            Instructions:
-                        </p>
-                        <div id="instructions-list">
-                            <p id="instructions"></p>
+                        <div id="modal-title-container">
+                            <p class="title is-4" id="titleDM"></p>
                         </div>
-                    </div>
-                    <button
-                        id="saveDrinkBtn"
-                        class="button is-dark button is-medium"
-                    >
-                        Save Drink!
-                    </button>
-                    <button
-                        id="getDrinkBtn"
-                        class="button is-dark button is-medium"
-                    >
-                        Find a Saved Drink!
-                    </button>
-                </div>
-            </div>
-            <!-- End 1st column-->
-            
-            <!-- Creating Main Column with Welcome MSG/Rules/Start Button-->
-            <div class="column is-three-fifths">
-                <div class="box content welcome-message">
-                    <h1>Welcome to Trivia With A Twist!</h1>
-                </div>
-                <div class="box content">
+                        <div id="modal-image-container">
+                            <figure class="image" id="imgDM"></figure>
+                        </div>
+                        <hr />
 
-                    <h2 class="welcome-message">Rules & Directions</h2>
-                    <p class="rules-directions">
-                        Everyone needs a drink in hand before we start the game!
-                        Click on the Randomize Drink selection to the left to
-                        get it going. For every question answered wrong, you
-                        drink. High score wins. Have fun and click the Start
+                        <div id="ingredients-container">
+                            <p class="title is-3" id="ingredientsTitle">
+                                Ingredients:
+                            </p>
+                            <ul id="ingredients-list">
+                                <li id="ingredients"></li>
+                            </ul>
+                        </div>
 
-                        Trivia button to begin.
-                    </p>
-                </div>
-                <div class="box" id="start-section">
-
-                    <button class="modal-btn" type="button" id="btnStartTrivia">Start Trivia</button>
-                    <div class="modal-bg">
-                        <div class="modal">
-                            <div class="container">
-                                <span class="modal-close">X</span>
-                                <br>
-                                <div class="question">Question 1</div>
-                                <br>
-                                <ul>
-                                    <li><button class="answer-button" data-value="" id="a">a</button></li>
-                                    <li><button class="answer-button" data-value=""id="b">b</button></li>
-                                    <li><button class="answer-button" data-value=""id="c">c</button></li>
-                                    <li><button class="answer-button" data-value=""id="d">d</button></li>
-                                </ul>
-                                <!--Stats-->
-                                <ul class="stats">
-                                    <li class="statsContainer">
-                                        <div id="score">Score: 0</div>
-                                    </li>
-                                    <li class="statsContainer">
-                                        <div id="question-number"></div>
-                                    </li>
-                                </ul>
+                        <div id="instructions-container">
+                            <p class="title is-3" id="instructionsTitle">
+                                Instructions:
+                            </p>
+                            <div id="instructions-list">
+                                <p id="instructions"></p>
                             </div>
                         </div>
+                        <button
+                            id="saveDrinkBtn"
+                            class="button is-dark button is-medium"
+                        >
+                            Save Drink!
+                        </button>
+                        <button
+                            id="getDrinkBtn"
+                            class="button is-dark button is-medium"
+                        >
+                            Find a Saved Drink!
+                        </button>
                     </div>
-                    
-                    <button
-                        type="button"
-                        class="button is-dark button is-medium"
-                        id="startTrivia"
-                    >
-                        Start Trivia!
-                    </button>
+                </div>
+                <!-- End 1st column-->
 
+                <!-- Creating Main Column with Welcome MSG/Rules/Start Button-->
+                <div class="column is-three-fifths">
+                    <div class="box content welcome-message">
+                        <h1>Welcome to Trivia With A Twist!</h1>
+                    </div>
+                    <div class="box content">
+                        <h2 class="welcome-message">Rules & Directions</h2>
+                        <p class="rules-directions">
+                            Everyone needs a drink in hand before we start the
+                            game! Click on the Randomize Drink selection to the
+                            left to get it going. For every question answered
+                            wrong, you drink. High score wins. Have fun and
+                            click the Start Trivia button to begin.
+                        </p>
+                    </div>
+                    <div class="box" id="start-section">
+                        <div class="modal-bg">
+                            <div class="modal">
+                                <div class="container">
+                                    <span class="modal-close">X</span>
+                                    <br />
+                                    <div class="question">Question 1</div>
+                                    <br />
+                                    <ul>
+                                        <li>
+                                            <button
+                                                class="answer-button"
+                                                data-value=""
+                                                id="a"
+                                            >
+                                                a
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                class="answer-button"
+                                                data-value=""
+                                                id="b"
+                                            >
+                                                b
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                class="answer-button"
+                                                data-value=""
+                                                id="c"
+                                            >
+                                                c
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button
+                                                class="answer-button"
+                                                data-value=""
+                                                id="d"
+                                            >
+                                                d
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <!--Stats-->
+                                    <ul class="stats">
+                                        <li class="statsContainer">
+                                            <div id="score">Score: 0</div>
+                                        </li>
+                                        <li class="statsContainer">
+                                            <div id="question-number"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="button is-dark button is-medium"
+                            id="startTrivia"
+                        >
+                            Start Trivia!
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Start of 3rd column-->
+                <div
+                    class="column is-one-fifth cocktail-img"
+                    id="placeholder-container"
+                >
+                    <div class="box">
+                        <img
+                            src="./assets/images/cocktail.png"
+                            alt="Two grapefruit cocktails with rosemary garnishes"
+                        />
+                    </div>
                 </div>
             </div>
-
-            <!-- Start of 3rd column-->
-            <div class="column is-one-fifth cocktail-img" id="placeholder-container">
-                <div class="box">
-                    <img
-                        src="./assets/images/cocktail.png"
-                        alt="Two grapefruit cocktails with rosemary garnishes"
-                    />
-                </div>
-            </div>
-       
-
-        </div>
-        <!-- below is going into Model, this is just for testing-->
-
-
-    </main>
-    <footer>Made with love by Lily, Luke, and Pablo</footer>
-</body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="./assets/js/script.js"></script>
-<script src="./assets/js/trivia.js"></script>
-
+            <!-- below is going into Model, this is just for testing-->
+        </main>
+        <footer>Made with love by Lily, Luke, and Pablo</footer>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <!-- <script src="./assets/js/trivia.js"></script> -->
 </html>
-
