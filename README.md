@@ -34,4 +34,4 @@ The user can fetch a random drink recipe through the application by way of The C
 
 #### [Open Trivia Database](https://https://opentdb.com/)
 
-The trivia game starts when the host clicks the `Start Trivia!` button. On the button click, a modal opens and it contains 5 elements: a question and four buttons that work as answers.
+The trivia game starts when the host clicks the `Start Trivia!` button. On the button click, a modal opens and it contains 5 elements, a question and four buttons, their text content an answer.
