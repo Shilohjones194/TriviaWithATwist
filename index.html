@@ -1,77 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css"
-        />
-        <script
-            src="https://kit.fontawesome.com/a8c6a3430b.js"
-            crossorigin="anonymous"
-        ></script>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./assets/style/style.css" />
-        <title>Trivia With A Twist</title>
-    </head>
 
-    <body>
-        <!--APIs: https://opentdb.com/api_config.php-->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/a8c6a3430b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <title>Trivia With A Twist</title>
+</head>
 
-        <header class="jumbotron">
-            <h1 class="app-title">
-                Trivia with a Twist!<i
-                    class="fa fa-cocktail fa-fw"
-                    aria-hidden="true"
-                ></i>
-            </h1>
-        </header>
+<body>
+    <!--APIs: https://opentdb.com/api_config.php-->
 
-        <main>
-            <div class="columns">
-                <div class="column is-one-fifth cocktail-card">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-content" id="drink-title-container">
-                                    <p class="title is-4" id="drinkTitleMain">
-                                        Find a drink!
-                                    </p>
-                                </div>
+    <header class="jumbotron">
+        <h1 class="app-title">
+            Trivia with a Twist!<i class="fa fa-cocktail fa-fw" aria-hidden="true"></i>
+        </h1>
+    </header>
+
+    <main>
+        <div class="columns">
+            <div class="column is-one-fifth cocktail-card">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content" id="drink-title-container">
+                                <p class="title is-4" id="drinkTitleMain">
+                                    Find a drink!
+                                </p>
                             </div>
+                        </div>
 
-                            <div id="card-image"></div>
-                            
-                            <hr />
+                        <div id="card-image"></div>
 
-                            <div class="drink-random" id="search">
-                                <p>Click the button for a random drink!</p>
-                                <button
-                                    id="randoBtn"
-                                    class="button is-dark button is-medium"
-                                >
-                                    Search!
-                                </button>
-                            </div>
+                        <hr />
+
+                        <div class="drink-random" id="search">
+                            <p>Click the button for a random drink!</p>
+                            <button id="randoBtn" class="button is-dark button is-medium">
+                                Search!
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Drink Modelo -->
-                <div class="modal" id="drinkModal">
-                    
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
+            <!-- Drink Modelo -->
+            <div class="modal" id="drinkModal">
+
+                <div class="modal-content">
+                    <span class="close">&times;</span>
                     <div id="modal-title-container">
                         <p class="title is-4" id="titleDM"></p>
                     </div>
                     <div id="modal-image-container">
-                    <figure class="image" id="imgDM"></figure>
+                        <figure class="image" id="imgDM"></figure>
                     </div>
                     <hr />
 
@@ -92,22 +78,16 @@
                             <p id="instructions"></p>
                         </div>
                     </div>
-                    <button
-                        id="saveDrinkBtn"
-                        class="button is-dark button is-medium"
-                    >
+                    <button id="saveDrinkBtn" class="button is-dark button is-medium">
                         Save Drink!
                     </button>
-                    <button
-                        id="getDrinkBtn"
-                        class="button is-dark button is-medium"
-                    >
+                    <button id="getDrinkBtn" class="button is-dark button is-medium">
                         Find a Saved Drink!
                     </button>
                 </div>
             </div>
             <!-- End 1st column-->
-            
+
             <!-- Creating Main Column with Welcome MSG/Rules/Start Button-->
             <div class="column is-three-fifths">
                 <div class="box content welcome-message">
@@ -124,7 +104,10 @@
                     </p>
                 </div>
                 <div class="box" id="start-section">
-                    <button class="modal-btn" type="button" id="btnStartTrivia">Start Trivia</button>
+                    <button type="button" class="button is-dark button is-medium" id="startTrivia">
+                        Start Trivia!
+                    </button>
+
                     <div class="modal-bg">
                         <div class="modal">
                             <div class="container">
@@ -134,9 +117,9 @@
                                 <br>
                                 <ul>
                                     <li><button class="answer-button" data-value="" id="a">a</button></li>
-                                    <li><button class="answer-button" data-value=""id="b">b</button></li>
-                                    <li><button class="answer-button" data-value=""id="c">c</button></li>
-                                    <li><button class="answer-button" data-value=""id="d">d</button></li>
+                                    <li><button class="answer-button" data-value="" id="b">b</button></li>
+                                    <li><button class="answer-button" data-value="" id="c">c</button></li>
+                                    <li><button class="answer-button" data-value="" id="d">d</button></li>
                                 </ul>
                                 <!--Stats-->
                                 <ul class="stats">
@@ -150,7 +133,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -158,13 +141,10 @@
             <!-- Start of 3rd column-->
             <div class="column is-one-fifth cocktail-img" id="placeholder-container">
                 <div class="box">
-                    <img
-                        src="./assets/images/cocktail.png"
-                        alt="Two grapefruit cocktails with rosemary garnishes"
-                    />
+                    <img src="./assets/images/cocktail.png" alt="Two grapefruit cocktails with rosemary garnishes" />
                 </div>
             </div>
-        </main>
+
 
         </div>
         <!-- below is going into Model, this is just for testing-->
@@ -178,3 +158,4 @@
 <script src="./assets/js/trivia.js"></script>
 
 </html>
+<<<<<<< HEAD=======>>>>>>> d2f45fe3e350eba4b6682454fb6b41b72a7a8f23
