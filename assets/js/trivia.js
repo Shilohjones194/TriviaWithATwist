@@ -23,17 +23,17 @@ startTrivia.addEventListener('click', function () {
 })
 
 function resetModal() {
-  if(!modalState) {
-    currentQuestion = 0;
-    score = 0;
-    missed = 0;
-    counter = 0;
-    console.log("RESETTING ALL THE VALUES",currentQuestion);
-    displayScore()
-  }
+    if (!modalState) {
+        currentQuestion = 0;
+        score = 0;
+        missed = 0;
+        counter = 0;
+        console.log("RESETTING ALL THE VALUES", currentQuestion);
+        displayScore()
+    }
 }
 
-function renderQuestion() { 
+function renderQuestion() {
     console.log(questionObjs[currentQuestion])
     document.querySelector(".question").innerHTML = questionObjs[currentQuestion].question
     let randomNumber = Math.floor(Math.random() * 3.2) // random number 0-3
@@ -73,33 +73,33 @@ document.getElementById("d").addEventListener("click", checkAnswer)
 function checkAnswer() {
     let currentSelection = this.getAttribute("data-value")
     console.log(this, questionObjs.length)
-    if(currentQuestion <= questionObjs.length - 1) {
-      console.log(`THE CURRENT QUESTION IS ${currentQuestion}`)
-      if (currentSelection == questionObjs[currentQuestion].correct_answer ) {
-          if(counter < 5) {
-            score++
-            counter++
-            displayScore()
-            console.log("THIS IS THE COUNTER",counter)
-            
-          }
-      } else {
-          if(counter < 5) {
-            missed++
-            counter++
-            displayScore()
-            console.log("THIS IS THE COUNTER",counter)
-          }
-      }
-      
-      if (currentQuestion < questionObjs.length - 1) {
-          ++currentQuestion;
-          renderQuestion()
-      } else {
-        // console.log("what is this condition")
-          // displayScore()
+    if (currentQuestion <= questionObjs.length - 1) {
+        console.log(`THE CURRENT QUESTION IS ${currentQuestion}`)
+        if (currentSelection == questionObjs[currentQuestion].correct_answer) {
+            if (counter < 5) {
+                score++
+                counter++
+                displayScore()
+                console.log("THIS IS THE COUNTER", counter)
 
-      }
+            }
+        } else {
+            if (counter < 5) {
+                missed++
+                counter++
+                displayScore()
+                console.log("THIS IS THE COUNTER", counter)
+            }
+        }
+
+        if (currentQuestion < questionObjs.length - 1) {
+            ++currentQuestion;
+            renderQuestion()
+        } else {
+            // console.log("what is this condition")
+            // displayScore()
+
+        }
     }
 }
 
@@ -107,28 +107,28 @@ function checkAnswer() {
 function displayScore() {
     // modalBg.classList.remove('bg-active');
     document.getElementById("score").innerHTML = `<h1>Score:${score}</h1> <p>Missed: ${missed}</p>`
-    document.getElementById("question-number").innerHTML = `<h1>Question:${counter < 4 ? counter + 1: 5}/5</h1>`
+    document.getElementById("question-number").innerHTML = `<h1>Question:${counter < 4 ? counter + 1 : 5}/5</h1>`
 
 }
 
 
-                // // need to make save score functional:
- function saveHS() {
-     var name = nameEl.value.trim();
+// // need to make save score functional:
+function saveHS() {
+    var name = nameEl.value.trim();
 
-            // Saving HighScores to local drive
-     if(name !== "") {
-         //Save HighScores
-         var highScores = JSON.parse(window.localStorage.getItem("highscores")) || [];
-         var newScore= {
-             score: amount,
-             name: name
-         };
-         highScores.push(newScore);
-         window.localStorage.setItem("highscores", JSON.stringify(highScores));
-         
-     }
- }
+    // Saving HighScores to local drive
+    if (name !== "") {
+        //Save HighScores
+        var highScores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+        var newScore = {
+            score: amount,
+            name: name
+        };
+        highScores.push(newScore);
+        window.localStorage.setItem("highscores", JSON.stringify(highScores));
+
+    }
+}
 
 
 
