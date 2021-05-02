@@ -2,7 +2,7 @@
 
 ## Description
 
-Our deployed application can be found by clicking this link: [Trivia with a Twist](https://shilohjones194.github.io/triviawithatwist).  
+Our deployed application can be found by clicking this link: [Trivia with a Twist](https://https://shilohjones194.github.io/TriviaWithATwist/).  
 ![Trivia with a Twist!](./assets/images/trivia-with-a-twist.gif)
 
 ### User Story
